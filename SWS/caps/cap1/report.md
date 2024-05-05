@@ -1,7 +1,7 @@
 ![cap1](assets/cap.png)
 
 # Execute Summary
-This machine is hosted for our Software Security module for assignment 1. The machine has many port open and we have to exploit it using the vulnerabilities present in the services running on the machine. The machine has web server running on port 80 which has login page in specific directory. The machine has FTP server running on port 21 which has user login enabled. The machine has SSH server running on port 22 which has authenticated based login. The machine has MySQL server running on port 3306 which was able to login using the specific command and I could see all the data in the database. There were many port open for the exploits. First of all I tried for reverse shell using the web server but unfortunately I could get the resverse shell though I could upload the php file on the web directory. 
+This machine is hosted for our Software Security module for assignment 1. The machine has many ports open and we have to exploit it using the vulnerabilities present in the services running on the machine. The machine has a web server running on port 80 which has a login page in a specific directory. The machine has an FTP server running on port 21 which has user login enabled. The machine has an SSH server running on port 22 which has authenticated based login. The machine has a MySQL server running on port 3306 which was able to login using the specific command and I could see all the data in the database. There were many ports open for the exploits. First of all I tried to reverse shell using the web server but unfortunately I could get the reverse shell though I could upload the php file on the web directory.
 
 ## Github Repo Link
 
@@ -11,15 +11,16 @@ This machine is hosted for our Software Security module for assignment 1. The ma
 
 ## Assessment Overview and Recommendations
 
-During the penetration test on machine of the ip address 10.3.21.140, I could not find  exploits other than port 3306(mysql) though all the ports were vulnerable because of outdated version of the application. But I have tried a lots of stuff to find the vulnerablities.
+During the penetration test on the machine of the ip address 10.3.21.140, I could not find exploits other than port 3306(mysql) though all the ports were vulnerable because of outdated versions of the application. But I have tried a lot of stuff to find the vulnerabilities.
 
-I found out that I was able to upload reverse shell file in one of the directory and I could even run the file which can lead closer to exploitation. This behaviour of uploading file should not be allowed. It is not just on the http directories but also on the ftp port I could add file, unfortunately ftp port(21) was not accessable on http. This behaviour save the machine from exploitation. If ftp port(21) was accessable from http server there coluld be high chances of exploits. The above behaviour of the ports mentioned above is the dangerous because the attacker can upload anything they could to gain unauthorised access. 
+I found out that I was able to upload a reverse shell file in one of the directories and I could even run the file which can lead to exploitation. This behavior of uploading files should not be allowed. It is not just on the http directories but also on the ftp port I could add files to, unfortunately ftp port(21) was not accessible on http. This behavior saves the machine from exploitation. If ftp port(21) was accessible from the http server there could be high chances of exploits. The behavior of the ports mentioned above is dangerous because the attacker can upload anything they could to gain unauthorized access.
 
-Other thing is, database of the system was visible or accessable and could inspect all the data that was inside the database which is on port 3306(mysql). It was possible with just one line of command and I was in. I could run all the that was needed to run. I think this behaviour of mysql port is unusual because this coluld lead to loss ot sensetives informations. 
+Another thing is, the database of the system was visible or accessible and could inspect all the data that was inside the database which is on port 3306(mysql). It was possible with just one line of command and I was in. I could run all the that was needed to run. I think this behavior of mysql port is unusual because this could lead to loss of sensitive information.
 
-This is about the twiki, I dont't know whether the website has used twiki or not, but if it has used twiki for their benefits. Which enable user to upload files on it and share it to other. I see this as a weak spot or the tatget spot  for the attacker to upload files which can lead closer to exploitation of sensetive informations. 
+This is about the twiki, I don't know whether the website has used twiki or not, but if it has used twiki for their benefits. Which enable user to upload files on it and share it to other. I see this as a weak spot or the target spot for the attacker to upload files which can lead closer to exploitation of sensitive information.
 
-This is positive side of the webpage that it had a login form where only the adminstrative user are authorised. If website have a login form, it should be carefully designed so that it is not sql injectable which can lead attacker to sensitive informations. Lucily the login form was not injectable.
+The positive side of the webpage is that it has a login form where only the administrative users are authorized. If website have a login form, it should be carefully designed so that it is not sql injectable which can lead attacker to sensitive informations. Luckily the login form was not injectable.
+
 
 
 # Network Penetration Test Assessment Summary
@@ -32,7 +33,7 @@ I have tried everything that I have learned or I could think of to exploit the m
 
 ### Reverse shell on web server
 
-I tried uploading file on randon directories, fortunately I was able to upload the file that I want to. After successflly uoloading file(reverse shell file) and I was able to run the file but I couldn't get response. 
+I tried uploading files on random directories, fortunately I was able to upload the file that I wanted to. After successfully uploading the file(reverse shell file) I was able to run the file but I couldn't get a response.
 
 ![reverse shell upload](assets/reverseshellupload.png)
 
@@ -55,7 +56,7 @@ I guessed the username and the password as "user" to login to ftp. Login was suc
 
 ### mysql for getting the data from the database
 
-I was able to get inside the mysql port and even access all the database present inside the system. Though I found those information I didn't find it useful anywhere. 
+I was able to get inside the mysql port and even access all the databases present inside the system. Though I found that information, I didn't find it useful anywhere.
 
 ![mysql](assets/mysql.png)
 
@@ -76,4 +77,4 @@ So I started searching the exploits of twiki, I tred exploiting using metasploit
 
 # Remediation Summary
 
-The target machine has many vulnerable ports open which can lead to exploitation. The vulnerabilties was based on the its outdated version of application. The main thing that I found was, attacker can upload file on the web server and ftp server which can lead close to exploitation of the machine. Those behaviour should not be expose to the attacker or we should not give any chance to start attacker to attack. The best way to prevent from every vulnerablities is to keep all the application upto latest version. 
+The target machine has many vulnerable ports open which can lead to exploitation. The vulnerabilities were based on its outdated version of the application. The main thing that I found was, an attacker can upload files on the web server and ftp server which can lead to exploitation of the machine. Those behaviors should not be exposed to the attacker or we should not give any chance to the attacker to attack. The best way to prevent vulnerabilities is to keep all the applications up to the latest version.
